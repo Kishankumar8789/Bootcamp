@@ -1,12 +1,18 @@
 #include<stdio.h>
-void printFibonacci(int a, int b, int n){
-    if(n==0){
-        return;
-    }
-    printf("%d",a);
-    return printFibonacci(b, a+b, n-1);
+void printFibonacci(int num){
+    int a = 0,b=1,next;
+    printf("%d %d",a,b);
+    for(int i=1; i<=num; i++){
+        next=a+b;
+        printf(" %d",next);
+        a=b;
+        b=next;  
+    }   
 }
 int main(){
-    printFibonacci(0,1,5);
-    return 0;
+    int number;
+    printf("Enter the number = ");
+    scanf("%d",&number);
+    printFibonacci(number);
+    return 0;    
 }
